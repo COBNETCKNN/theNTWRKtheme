@@ -49,3 +49,21 @@ function remove_pages_editor(){
     // end if
 } // end remove_pages_editor
 add_action( 'add_meta_boxes', 'remove_pages_editor' );
+
+// Ajax load more for Projects Archive page
+add_action( 'wp_enqueue_scripts', 'cxc_theme_enqueue_script_style' );
+
+function cxc_theme_enqueue_script_style() {
+
+	wp_enqueue_script( 'custom-script', get_template_directory_uri(). '/partials/ajax/load-more-projects.js', array('jquery') );
+	// Localize the script with new data
+	wp_localize_script( 'custom-script', 'ajax_posts', array(
+		'ajaxurl' => admin_url( 'admin-ajax.php' ),
+		'noposts' => __( 'No older posts found', 'cxc-codexcoach' ),
+	));
+
+}
+
+// Ajax callback function for load more Projects archive page
+require_once('partials/ajax/load-more-projects-callback.php');
+

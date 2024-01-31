@@ -33,4 +33,16 @@ jQuery(document).ready(function (jQuery) {
     }
     e.preventDefault();
   });
+
+  // Single project Load more button
+  jQuery(function () {
+    jQuery(".singleCredentials_wrapper").slice(0, 4).css('display', 'flex');
+    jQuery("body").on('click touchstart', '.projectsPostsSingle_loadMore__button', function (e) {
+      e.preventDefault();
+      jQuery(".singleCredentials_wrapper:hidden").slice(0, 30).slideDown().css('display', 'flex');
+      if (jQuery(".singleCredentials_wrapper:hidden").length == 0) {
+        jQuery(".projectsPostsSingle_loadMore__button").css('display', 'none');
+      }
+    });
+  });
 });

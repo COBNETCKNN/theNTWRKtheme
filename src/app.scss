@@ -332,6 +332,21 @@ a.cat-list_item.active {
   background-size: cover;
 }
 
-.singleCredentials_title {
+.singleCredentials_title, .singleCredentials_wrapper {
   border-bottom: 0.5px solid rgba(150, 235, 66, 0.50);
+}
+
+.singleCredentials_wrapper {
+  display:none;
+}
+
+.cxc-disabled {
+  display: none;
+}
+
+.codex-load-more {
+  width: 100%;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
 }

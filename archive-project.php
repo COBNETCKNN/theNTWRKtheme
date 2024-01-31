@@ -43,13 +43,23 @@
 <section id="projectPosts" class="my-10">
     <div class="container mx-auto">
         <div class="mx-10">
-        <div class="grid-wrapper">
-            <?php
-
+        <div class="cxc-post-wrapper">
+            <div id="cxc-posts" class="cxc-posts grid-wrapper">
+                <?php
+                $postsPerPage = 9;
                 $i = 0;
-                // The WordPress Loop
-                if (have_posts()) :
-                    while (have_posts()) : the_post();
+
+                $args = array(
+                    'post_type' => 'project',
+                    'post_status' => 'publish',
+                    'posts_per_page' => $postsPerPage,
+                );
+
+                $the_query = new WP_Query( $args );
+
+                if ( $the_query->have_posts() ) {
+                    while ( $the_query->have_posts() ){ 
+                        $the_query->the_post();
 
                         $thumb = get_the_post_thumbnail_url(); 
                         ?>
@@ -59,16 +69,15 @@
                                 </div>
                         <?php
                         $i++;
-                    endwhile;
-                else :
-                    ?>
-                    <p>No posts found</p>
-                <?php endif; ?>
+                    }
+                }
+                wp_reset_postdata();
+                ?>
             </div>
-                
-            <div class="projectsPosts_loadMore my-16 flex justify-center">
-                <a class="projectsPosts_loadMore__button text-white font-jost thentwrkTheme_paragraph flex justify-center items-center h-[50px]" type="button" href=""><span class="projectPosts_loadMore__plus mb-2 mx-2">+</span>Load More</a>
+            <div class="projectsPosts_loadMore flex justify-center">
+                <button type="button" id="codex-load-more" class="codex-load-more projectsPosts_loadMore__button text-white font-jost thentwrkTheme_paragraph flex justify-center items-center" data-page="2"><span class="projectPosts_loadMore__plus mb-2 mx-2">+</span>Load More</button>
             </div>
+        </div>
         </div>
     </div>
 </section>

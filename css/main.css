@@ -619,6 +619,9 @@ video {
 .w-9\/12{
   width: 75%;
 }
+.w-\[250px\]{
+  width: 250px;
+}
 .w-\[760px\]{
   width: 760px;
 }
@@ -719,17 +722,27 @@ video {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.py-7{
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
 .pb-1{
   padding-bottom: 0.25rem;
 }
-.pb-10{
-  padding-bottom: 2.5rem;
+.pb-16{
+  padding-bottom: 4rem;
+}
+.pb-5{
+  padding-bottom: 1.25rem;
+}
+.pb-7{
+  padding-bottom: 1.75rem;
 }
 .pt-24{
   padding-top: 6rem;
 }
-.pb-5{
-  padding-bottom: 1.25rem;
+.pt-5{
+  padding-top: 1.25rem;
 }
 .font-jost{
   font-family: Jost, sans-serif;
@@ -1072,6 +1085,21 @@ a.cat-list_item.active {
   background-size: cover;
 }
 
-.singleCredentials_title {
+.singleCredentials_title, .singleCredentials_wrapper {
   border-bottom: 0.5px solid rgba(150, 235, 66, 0.5);
+}
+
+.singleCredentials_wrapper {
+  display: none;
+}
+
+.cxc-disabled {
+  display: none;
+}
+
+.codex-load-more {
+  width: 100%;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
 }
