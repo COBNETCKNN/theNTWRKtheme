@@ -67,3 +67,5 @@ function cxc_theme_enqueue_script_style() {
 // Ajax callback function for load more Projects archive page
 require_once('partials/ajax/load-more-projects-callback.php');
 
+
+
