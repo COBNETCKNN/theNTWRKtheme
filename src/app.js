@@ -1,10 +1,4 @@
 jQuery(document).ready(function(jQuery){
-    // About Us masonry
-    jQuery('.gridAboutUs').masonry({
-        // options
-        itemSelector: '.gridAboutUs-item',
-        columnWidth: 150
-        });
       
         var owl = jQuery('.owl-carousel');
         owl.owlCarousel({
@@ -13,7 +7,7 @@ jQuery(document).ready(function(jQuery){
             margin:20,
             responsive:{
                 0:{
-                    items:1
+                    items:2
                 },
                 600:{
                     items:3
@@ -46,4 +40,29 @@ jQuery(document).ready(function(jQuery){
                 }
             });
         });
+
+    // Mobile Header Menu
+    jQuery(".nav-toggler").click(function(){
+        jQuery("#navigation").toggle("slide");
+        jQuery('.navbar_grid__dropdown').addClass('open');
+        jQuery('body').css('overflow', 'hidden');
+    });
+
+    jQuery(".nav_close__button").click(function(){
+        jQuery('.navbar_grid__dropdown').removeClass('open');
+        jQuery('body').css('overflow', 'auto');
+    });
+
+
+});
+
+new ScrollCarousel(".my-carousel", {
+    slideSelector: '.my-slide',
+    margin: 150,
+  });
+
+new ScrollCarousel(".my-carousel-reverse", {
+    slideSelector: '.my-slide-reverse',
+    margin: 150,
+    direction: 'ltr'
 });

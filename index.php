@@ -19,35 +19,35 @@
             $overviewTitle = get_sub_field('overview_heading');
 
             ?>
-            <h1 class="homepage_overview__title text-white font-prompt w-[760px]"><?php echo $overviewTitle; ?></h1>
+            <h1 class="homepage_overview__title text-center lg:text-left text-white font-prompt lg:w-[760px]"><?php echo $overviewTitle; ?></h1>
 
-            <div class="grid grid-cols-6 gap-4 mt-36">
+            <div class="grid lg:grid-cols-6 gap-4 mt-16 lg:mt-36">
               <!-- Left side -->
-              <div class="col-span-2">
+              <div class="lg:col-span-2">
                 <?php 
                   $overviewContent = get_field('overview_content'); 
                   $overviewLeftSide = $overviewContent['overview_left_side'];
                   $overviewLeftSideTitle = $overviewLeftSide['overview_left_side_heading'];
                 ?>
 
-                <span class="homepageOverview_ourProjects__span text-green font-jost">Our projects</span>
-                <h3 class="thentwrkTheme_title font-prompt text-white mt-2"><?php echo $overviewLeftSideTitle; ?></h3>
+                <span class="homepageOverview_ourProjects__span text-center lg:text-left text-green font-jost">Our projects</span>
+                <h3 class="thentwrkTheme_title text-center lg:text-left font-prompt text-white mt-2"><?php echo $overviewLeftSideTitle; ?></h3>
               </div>
               <!-- Right side -->
-              <div class="col-span-4 ml-24">
+              <div class="lg:col-span-4 lg:ml-24">
                 <?php 
                     $overviewRightSide = $overviewContent['overview_right_side'];
                     $overviewRightSideDescription = $overviewRightSide['overveiw_right_side_description'];
                   ?>
 
-                  <p class="thentwrkTheme_paragraph text-white font-normal font-jost w-10/12"><?php echo $overviewRightSideDescription; ?></p>
-                  <a class="getInTouch_button py-2 px-5 bg-green text-brown font-jost font-normal text-lg rounded-lg mt-6" type="button" href="<?php echo get_post_type_archive_link('project')?>" target="_blank">View all work &#8594;</a>
+                  <p class="thentwrkTheme_paragraph text-center lg:text-left text-white font-normal font-jost lg:w-10/12"><?php echo $overviewRightSideDescription; ?></p>
+                  <a class="ourProejcts_getInTouch__button getInTouch_button py-2 px-5 bg-green text-brown font-jost font-normal text-lg rounded-lg mt-6" type="button" href="<?php echo get_post_type_archive_link('project')?>" target="_blank">View all work &#8594;</a>
               </div>
             </div>
         <?php endwhile; ?>
       <?php endif; ?>
     </div>
-    <div class="ourProjects_carousel my-24">
+    <div class="ourProjects_carousel my-14 lg:my-24">
       <?php
         // The Query
         $args = array(
@@ -66,10 +66,12 @@
         if ($projectQuery->have_posts()) :
             while ($projectQuery->have_posts()) : $projectQuery->the_post(); ?>
                 
-          <div class="projectsCard_wrapper relative">
-              <?php the_post_thumbnail('project-carousel') ?>
-            <h3 class="projectCard_title font-prompt text-white absolute bottom-1 left-3 z-20"><?php the_title(); ?></h3>
-          </div>
+          <a href="<?php the_permalink(); ?>">
+            <div class="projectsCard_wrapper relative">
+                <?php the_post_thumbnail('project-carousel') ?>
+              <h3 class="projectCard_title font-prompt text-white absolute bottom-1 left-3 z-20"><?php the_title(); ?></h3>
+            </div>
+          </a>
 
           <?php 
             endwhile;
@@ -87,63 +89,62 @@
   </div>
 </section>
 
-
-
 <!-- Services Section -->
 <section id="services" class="my-10">
   <div class="container mx-auto">
-    <div class="servicesHeading mx-10 mb-10">
+    <div class="servicesHeading mx-10 mb-14">
       <span class="homepageOverview_ourProjects__span text-green font-jost">Services</span>
-      <h3 class="thentwrkTheme_title font-prompt text-white mt-2">What we do</h3>
+      <h3 class="thentwrkTheme_title text-center lg:text-left font-prompt text-white mt-2">What we do</h3>
     </div>
-    <!-- Upper Slider -->
-    <?php 
-    if( have_rows('services_section') ): ?>
-      <?php while( have_rows('services_section') ): the_row(); 
-        $upperSlider = get_sub_field('services_section_upper_slider');
-        $size = 'full'; // (thumbnail, medium, large, full or custom size)
-        if( $upperSlider ): ?>
-            <div class="my-carouse flex justify-between">
-              <?php foreach( $upperSlider as $upperSliderImage ): ?>
-                <div class="services_gallery">
-                  <?php echo wp_get_attachment_image( $upperSliderImage, $size ); ?>
-                </div>
-              <?php endforeach; ?>
-            </div>
-        <?php endif; ?>
-    <!-- Bottom slider -->
-    <?php 
-      $bottomSlider = get_sub_field('services_section_bottom_slider');
-      $size = 'full'; // (thumbnail, medium, large, full or custom size)
-      if( $bottomSlider ): ?>
-          <div class="my-carousel-revers flex justify-between mt-10">
-            <?php foreach( $bottomSlider as $bottomSliderImage ): ?>
-              <div class="services_gallery">
-                <?php echo wp_get_attachment_image( $bottomSliderImage, $size ); ?>
+  </div>
+  <!-- Upper Slider -->
+  <?php 
+  if( have_rows('services_section') ): ?>
+    <?php while( have_rows('services_section') ): the_row(); 
+      $upperSlider = get_sub_field('services_section_upper_slider');
+      $size = 'services-carousel'; // (thumbnail, medium, large, full or custom size)
+      if( $upperSlider ): ?>
+          <div class="my-carousel-reverse">
+            <?php foreach( $upperSlider as $upperSliderImage ): ?>
+              <div class="my-slide-reverse">
+                <?php echo wp_get_attachment_image( $upperSliderImage, $size ); ?>
               </div>
             <?php endforeach; ?>
           </div>
       <?php endif; ?>
-
-        <div class="mx-10 services_content mt-24 mb-10">
-          <?php 
-            $servicesHeading = get_sub_field('services_section_heading');
-            $servicesParagraph = get_sub_field('services_section_paragraph');
-          ?>
-
-          <h3 class="thentwrkTheme_title font-prompt text-white mb-5"><?php echo $servicesHeading; ?></h3>
-          <p class="thentwrkTheme_paragraph text-white font-normal font-jost w-1/2"><?php echo $servicesParagraph; ?></p>
+  <!-- Bottom slider -->
+  <?php 
+    $bottomSlider = get_sub_field('services_section_bottom_slider');
+    if( $bottomSlider ): ?>
+        <div class="my-carousel mt-10">
+          <?php foreach( $bottomSlider as $bottomSliderImage ): ?>
+            <div class="my-slide">
+              <?php echo wp_get_attachment_image( $bottomSliderImage, $size ); ?>
+            </div>
+          <?php endforeach; ?>
         </div>
-      <?php endwhile; ?>
     <?php endif; ?>
-  </div>
+
+    <div class="container mx-auto">
+      <div class="mx-10 services_content mt-14 lg:mt-24 mb-0 lg:mb-10">
+            <?php 
+              $servicesHeading = get_sub_field('services_section_heading');
+              $servicesParagraph = get_sub_field('services_section_paragraph');
+            ?>
+
+            <h3 class="thentwrkTheme_title text-center lg:text-left font-prompt text-white mb-5"><?php echo $servicesHeading; ?></h3>
+            <p class="thentwrkTheme_paragraph text-center lg:text-left text-white font-normal font-jost lg:w-1/2"><?php echo $servicesParagraph; ?></p>
+          </div>
+        <?php endwhile; ?>
+      <?php endif; ?>
+    </div>
 </section>
 
 <!-- Connect and Join Section -->
-<section id="connectAndJoin" class="mt-36 mb-24">
+<section id="connectAndJoin" class="mt-20 lg:mt-36 mb-24">
   <div class="container mx-auto">
     <div class="mx-10">
-      <div class="grid grid-cols-2 gap-8">
+      <div class="grid lg:grid-cols-2 gap-8">
         <!-- Left side -->
         <div class="connectAndJoin_card__wrapper bg-darkBrown flex justify-center items-center py-6 px-12">
           <div class="connectAndJoin_card w-full h-fit">
@@ -159,15 +160,12 @@
 
                         ?>
 
-                        <h3 class="connectAndJoinSection_cardTitle font-prompt text-white mb-5 w-10/12"><?php echo $joinConnectLeftSideHeading; ?></h3>
-                        <p class="thentwrkTheme_paragraph text-white font-normal font-jost w-[95%]"><?php echo $joinConnectLeftSideParagraph; ?></p>
-                        <a class="getInTouch_button py-2 px-5 bg-green text-brown font-jost font-normal text-lg rounded-lg mt-6" type="button" href="<?php echo site_url('/contact')?>" target="_blank">Get in touch &#8594;</a>
+                        <h3 class="connectAndJoinSection_cardTitle text-center lg:text-left font-prompt text-white mb-5 lg:w-10/12"><?php echo $joinConnectLeftSideHeading; ?></h3>
+                        <p class="thentwrkTheme_paragraph text-center lg:text-left text-white font-normal font-jost lg:w-[95%]"><?php echo $joinConnectLeftSideParagraph; ?></p>
+                        <a class="connectAndJoin_getInTouch__button getInTouch_button py-2 px-5 bg-green text-brown font-jost font-normal text-lg rounded-lg mt-6" type="button" href="<?php echo site_url('/contact')?>" target="_blank">Get in touch &#8594;</a>
 
                     <?php endwhile; ?>
                   <?php endif; ?>
-
-
-
           </div>
         </div>
 
@@ -183,12 +181,12 @@
 
                   ?>
 
-                  <h3 class="connectAndJoinSection_cardTitle font-prompt text-white mb-14 w-10/12"><?php echo $joinConnectRightSideHeading; ?></h3>
-                  <p class="thentwrkTheme_paragraph text-white font-normal font-jost w-[95%]"><?php echo $joinConnectRightSideParagraph; ?></p>
+                  <h3 class="connectAndJoinSection_cardTitle text-center lg:text-left font-prompt text-white mb-5 lg:mb-14 lg:w-10/12"><?php echo $joinConnectRightSideHeading; ?></h3>
+                  <p class="thentwrkTheme_paragraph text-center lg:text-left text-white font-normal font-jost lg:w-[95%]"><?php echo $joinConnectRightSideParagraph; ?></p>
                   <?php
                   if( have_rows('footer_content_right_side', 21) ): ?>
                     <?php while( have_rows('footer_content_right_side', 21) ): the_row(); ?>
-                            <div class="footerRight_socialMedia flex justify-start mt-5">
+                            <div class="footerRight_socialMedia flex justify-center lg:justify-start mt-10 lg:mt-5">
                             <?php
                             if( have_rows('footer_content_right_side_social_media_icons') ):
                                 while( have_rows('footer_content_right_side_social_media_icons') ) : the_row();

@@ -54,7 +54,44 @@
 <section id="moreWork">
     <div class="container mx-auto">
         <div class="mx-10">
-            <h2 class="singleCredentials_title connectAndJoinSection_cardTitle font-prompt text-white pb-5">View more of our work</h2>
+            <h2 class="thentwrkTheme_title font-prompt text-white">View more of our work</h2>
+        </div>
+        <div class="ourProjects_carousel my-10">
+        <?php
+            // The Query
+            $args = array(
+                'post_type' => 'project',   // Specify the custom post type
+                'posts_per_page' => -1,      // Number of posts to display
+                'orderby' => 'date',        // Order by date
+                'order' => 'DESC',           // Sort in descending order
+            );
+
+            $projectQuery = new WP_Query($args); ?>
+
+            <div class="owl-carousel owl-theme">
+
+            <?php 
+            // The Loop
+            if ($projectQuery->have_posts()) :
+                while ($projectQuery->have_posts()) : $projectQuery->the_post(); ?>
+                <a href="<?php the_permalink(); ?>">
+                    <div class="projectsCard_wrapper relative">
+                        <?php the_post_thumbnail('project-carousel') ?>
+                        <h3 class="projectCard_title font-prompt text-white absolute bottom-1 left-3 z-20"><?php the_title(); ?></h3>
+                    </div>
+                </a>
+            <?php 
+                endwhile;
+            else :
+                // No posts found
+                echo 'No projects found';
+            endif; ?>
+
+            </div>
+            <?php 
+            // Restore original post data
+            wp_reset_postdata();
+        ?>
         </div>
     </div>
 </section>

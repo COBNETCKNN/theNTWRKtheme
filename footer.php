@@ -17,7 +17,7 @@ if ($query->have_posts()) {
 
 <footer class="">
     <div class="container mx-auto">
-        <div class="footerGrid grid grid-cols-3 gap-4 py-10 mx-10">
+        <div class="footerGrid grid lg:grid-cols-3 gap-4 py-10 mx-10">
             <!-- Left side -->
             <div class="col-span-2">
                 <div class="logoWrapper">
@@ -52,7 +52,7 @@ if ($query->have_posts()) {
                 </div>
             </div>
             <!-- Right side -->
-            <div class="col-span-1 mx-auto my-auto">
+            <div class="hidden lg:block col-span-1 mx-auto my-auto">
                 <div class="footer_rightSide_content">
                 <?php if( have_rows('footer_content_right_side') ): ?>
                         <?php while( have_rows('footer_content_right_side') ): the_row(); 

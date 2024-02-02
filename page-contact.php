@@ -5,7 +5,7 @@
     <div class="container mx-auto">
         <div class="mx-10">
             <div class="contact_heading__wrapper pt-24 pb-1">
-                <h1 class="thentwrktheme_page__heading text-white font-prompt ml-14">Contact</h1>
+                <h1 class="text-center lg:text-left thentwrktheme_page__heading text-white font-prompt lg:ml-14">Contact</h1>
             </div>
         </div>
     </div>
@@ -14,7 +14,7 @@
 <section id="contactContent" class="my-16">
     <div class="container mx-auto">
         <div class="mx-10">
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid lg:grid-cols-2 gap-4">
             <?php if( have_rows('contact_page') ): ?>
                 <?php while( have_rows('contact_page') ): the_row(); 
 
@@ -23,7 +23,7 @@
                     $contactPageFormShortcode = get_sub_field('contact_page_contact_form_shortcode'); ?>
 
                     <!-- Thumbnail -->
-                    <div class="contactPage_thumbnail__wrapper">
+                    <div class="hidden lg:block contactPage_thumbnail__wrapper">
                         <?php 
                             $size = 'full'; // (thumbnail, medium, large, full or custom size)
                             if( $contactPageImage ) {
@@ -40,8 +40,8 @@
                         $contactPageShortcode = get_sub_field('contact_page_contact_form_shortcode');
                         ?>
 
-                        <p class="text-white font-jost thentwrkTheme_paragraph w-2/3"><?php echo $contactPageFormText; ?></p>
-                        <div class="contactPage_contactForm text-white font-jost my-5">
+                        <p class="text-center lg:text-left text-white font-jost thentwrkTheme_paragraph lg:w-2/3"><?php echo $contactPageFormText; ?></p>
+                        <div class="contactPage_contactForm text-white font-jost mt-10 lg:mt-0 lg:my-5">
                             <?php echo do_shortcode($contactPageShortcode); ?>
                         </div>
                         <?php endwhile; ?>
