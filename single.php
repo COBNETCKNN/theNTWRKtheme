@@ -31,7 +31,7 @@
 
 <!-- Credentials Section -->
 <section id="singleCredentials" class="my-5 lg:my-0 lg:mb-16">
-    <div class="container mx-auto">
+    <div class="container mx-auto relative">
         <div class="mx-10">
             <!-- Project Heading -->
             <h1 class="singleCredentials_title connectAndJoinSection_cardTitle font-prompt text-white pb-7"><?php the_title(); ?></h1>
@@ -61,6 +61,8 @@
                 // Do something...
             endif;
             ?>
+            <!-- Line Art -->
+            <div class="page_lineArt__single"></div>
             <div class="projectsPosts_single_loadMore py-16 flex justify-center">
                 <a class="projectsPostsSingle_loadMore__button projectsPosts_loadMore__button text-white font-jost thentwrkTheme_paragraph flex justify-center items-center h-[50px]" type="button" href=""><span class="projectPosts_loadMore__plus mb-2 mx-2">+</span>Load More</a>
             </div>

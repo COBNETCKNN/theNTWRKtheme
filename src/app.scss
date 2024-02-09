@@ -15,6 +15,12 @@ body {
     background-color: #1B1B1B;
 }
 
+html, body {
+  width:100%;
+  overflow-x:hidden;
+  overflow-y: auto;
+}
+
 #menu-header-menu {
     display: flex;
 
@@ -59,7 +65,7 @@ video {
     height: 100%;
     top: -14%;
     left: 0;
-    z-index: 0;
+    z-index: 2;
     box-shadow: -1px 14px 59px 3px rgba(0,0,0,0.85);
     -webkit-box-shadow: -1px 14px 59px 3px rgba(0,0,0,0.85);
     -moz-box-shadow: -1px 14px 59px 3px rgba(0,0,0,0.85);
@@ -68,7 +74,7 @@ video {
   .headerGrid {
     width: auto;
     position: relative;
-    z-index: 2;
+    z-index: 3;
   }
 
   .homepage_overview__title {
@@ -455,5 +461,72 @@ a.cat-list_item.active {
     width: auto !important;
     height: 75px !important; /* Ensures that the image's height adjusts proportionally */
     object-fit: cover !important;
+  }
+}
+
+.contactPage_thumbnail__wrapper {
+  position: static;
+  z-index: 10;
+}
+
+@media (min-width: 1023px){
+  .ourProjects_lineArt {
+    width: 100rem;
+    height: 70rem;
+    position: absolute;
+    top: 40%;
+    left: 70%;
+    z-index: 0;
+    background-image: url('../assets/LineArt/Group74.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .services_lineArt {
+    width: 100rem;
+    height: 70rem;
+    position: absolute;
+    top: -250%;
+    left: 65%;
+    z-index: 0;
+    background-image: url('../assets/LineArt/Group73.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .page_lineArt {
+    width: 100rem;
+    height: 70rem;
+    position: absolute;
+    top: -220%;
+    right: 16%;
+    z-index: 0;
+    background-image: url('../assets/LineArt/Group74.png');
+    background-size: contain;
+    background-repeat: no-repeat; 
+  }
+  
+  .page_lineArt__bottom {
+    width: 100rem;
+    height: 70rem;
+    position: absolute;
+    bottom: -25%;
+    left: 80%;
+    z-index: -1;
+    background-image: url('../assets/LineArt/Group74.png');
+    background-size: contain;
+    background-repeat: no-repeat; 
+  }
+  
+  .page_lineArt__single {
+    width: 100rem;
+    height: 70rem;
+    position: absolute;
+    bottom: -45%;
+    left: 80%;
+    z-index: -1;
+    background-image: url('../assets/LineArt/Group74.png');
+    background-size: contain;
+    background-repeat: no-repeat; 
   }
 }

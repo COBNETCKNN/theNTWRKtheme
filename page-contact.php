@@ -2,7 +2,9 @@
 
 <!-- Contact Heading Section -->
 <section id="contact_heading">
-    <div class="container mx-auto">
+    <div class="container mx-auto relative">
+        <!-- Line Art -->
+        <div class="page_lineArt"></div>
         <div class="mx-10">
             <div class="contact_heading__wrapper pt-24 pb-1">
                 <h1 class="text-center lg:text-left thentwrktheme_page__heading text-white font-prompt lg:ml-14">Contact</h1>

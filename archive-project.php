@@ -2,7 +2,9 @@
 
 <!-- Projects Heading Section -->
 <section id="aboutUs_heading">
-    <div class="container mx-auto">
+    <div class="container mx-auto relative">
+        <!-- Line Art -->
+        <div class="page_lineArt"></div>
         <div class="mx-10">
             <div class="aboutUs_heading__wrapper pt-24 pb-1">
                 <h1 class="thentwrktheme_page__heading text-center lg:text-left text-white font-prompt lg:ml-14">Work</h1>
@@ -41,7 +43,7 @@
 
 <!-- Project Posts Section -->
 <section id="projectPosts" class="my-10">
-    <div class="container mx-auto">
+    <div class="container mx-auto relative">
         <div class="mx-10">
         <div class="cxc-post-wrapper">
             <div id="cxc-posts" class="cxc-posts grid-wrapper">
@@ -79,6 +81,8 @@
             </div>
         </div>
         </div>
+        <!-- Line Art -->
+        <div class="page_lineArt__bottom"></div>
     </div>
 </section>
 

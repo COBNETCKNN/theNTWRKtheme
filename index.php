@@ -1,17 +1,19 @@
 <?php get_header(); ?>
 
 <!-- Hero Section -->
-<section id="hero" class="no-cursor">
+<section id="hero">
     <div class="hero_video__overlay relative h-[82vh]">
         <video autoplay muted loop id="myVideo">
         <source src="<?php echo get_template_directory_uri() . '/assets/videos/thentwrkvideo.mp4'; ?>" type="video/mp4">
         </video>
     </div>
+    <!-- Line Art -->
+    <div class="ourProjects_lineArt"></div>
 </section>
 
 <!-- Our Projcts Section -->
-<section id="ourProjects" class="no-cursor">
-  <div class="container mx-auto ">
+<section id="ourProjects">
+  <div class="container mx-auto">
     <div class="mx-10 ">
       <?php if( have_rows('overview_content') ): ?>
         <?php while( have_rows('overview_content') ): the_row(); 
@@ -23,7 +25,7 @@
 
             <div class="grid lg:grid-cols-6 gap-4 mt-16 lg:mt-36">
               <!-- Left side -->
-              <div class="lg:col-span-2 no-cursor">
+              <div class="lg:col-span-2">
                 <?php 
                   $overviewContent = get_field('overview_content'); 
                   $overviewLeftSide = $overviewContent['overview_left_side'];
@@ -144,7 +146,9 @@
 
 <!-- Connect and Join Section -->
 <section id="connectAndJoin" class="mt-20 lg:mt-36 mb-24 no-cursor">
-  <div class="container mx-auto">
+  <div class="container mx-auto relative">
+    <!-- Line Art -->
+    <div class="services_lineArt"></div>
     <div class="mx-10">
       <div class="grid lg:grid-cols-2 gap-8">
         <!-- Left side -->
@@ -222,7 +226,5 @@
     </div>
   </div>
 </section>
-
-
 
 <?php get_footer(); ?>
