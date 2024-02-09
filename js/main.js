@@ -12,9 +12,12 @@ jQuery(document).ready(function (jQuery) {
         items: 3
       },
       960: {
-        items: 5
+        items: 3
       },
       1200: {
+        items: 4
+      },
+      1440: {
         items: 5
       }
     }
@@ -52,11 +55,36 @@ jQuery(document).ready(function (jQuery) {
   });
 });
 new ScrollCarousel(".my-carousel", {
+  autoplay: true,
+  autoplaySpeed: 4,
+  speed: 1,
   slideSelector: '.my-slide',
   margin: 150
 });
 new ScrollCarousel(".my-carousel-reverse", {
   slideSelector: '.my-slide-reverse',
+  autoplay: true,
+  autoplaySpeed: 4,
+  speed: 1,
   margin: 150,
   direction: 'ltr'
+});
+jQuery(document).ready(function () {
+  // Cache jQuery objects for performance
+  var cursorBlob = jQuery(".cursor-blob");
+
+  // Track mouse movement to update blob position
+  jQuery(document).mousemove(function (event) {
+    cursorBlob.css({
+      left: event.pageX + "px",
+      top: event.pageY + "px"
+    });
+  });
+
+  // Add blob effect when specific div is hovered
+  jQuery("#specificDiv").hover(function () {
+    cursorBlob.addClass("blob-active");
+  }, function () {
+    cursorBlob.removeClass("blob-active");
+  });
 });

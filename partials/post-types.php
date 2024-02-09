@@ -23,14 +23,7 @@ function thentwrktheme_post_types() {
 }
 add_action('init', 'thentwrktheme_post_types');
 
-// Adding custom post type to the query object
-function my_query_post_type($query) {
-    if ( is_category() && ( ! isset( $query->query_vars['suppress_filters'] ) || false == $query->query_vars['suppress_filters'] ) ) {
-        $query->set( 'post_type', array( 'post', 'project' ) );
-        return $query;
-    }
-}
-add_filter('pre_get_posts', 'my_query_post_type');
+
 
 // Removing default Posts from WordPress
 function remove_default_post_type($args, $postType) {

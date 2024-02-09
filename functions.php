@@ -24,7 +24,7 @@ add_image_size('logo-size', 210, 60, true);
 add_image_size('social-media-icons', 25, 25, true);
 add_image_size('project-carousel', 225, 200, true);
 add_image_size('project-post', 850, 250, true);
-add_image_size('services-carousel', 650, 65, true);
+add_image_size('services-carousel', 650, 65, false);
 
 // Registrating Custom Post Types
 require_once('partials/post-types.php');
@@ -59,6 +59,8 @@ add_action( 'wp_enqueue_scripts', 'cxc_theme_enqueue_script_style' );
 
 // Ajax callback function for load more Projects archive page
 require_once('partials/ajax/load-more-projects-callback.php');
+
+
 
 
 

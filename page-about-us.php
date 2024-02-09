@@ -12,7 +12,7 @@
 </section>
 
 <!-- About Us Content Section -->
-<section id="aboutUs_content" class="my-10 lg:h-screen">
+<section id="aboutUs_content" class="my-10 lg:h-fit">
     <div class="container mx-auto">
         <div class="mx-10">
             <?php if( have_rows('about_us_page') ): ?>
@@ -82,7 +82,7 @@
                             ?>
                                 <div class="gridAboutUs">
                                     <?php foreach( $aboutUsGallery as $aboutUsGalleryImage ): ?>
-                                        <div class="gridAboutUs gridAboutUs-item-<?php echo $i; ?>">
+                                        <div class="gridAboutUs-item-<?php echo $i; ?>">
                                             <?php echo wp_get_attachment_image( $aboutUsGalleryImage, $size ); ?>
                                         </div>
                                     <?php 
@@ -98,4 +98,5 @@
         </div>
     </div>
 </section>
+
 <?php get_footer(); ?>

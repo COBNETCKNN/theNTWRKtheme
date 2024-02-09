@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- Hero Section -->
-<section id="hero">
+<section id="hero" class="no-cursor">
     <div class="hero_video__overlay relative h-[82vh]">
         <video autoplay muted loop id="myVideo">
         <source src="<?php echo get_template_directory_uri() . '/assets/videos/thentwrkvideo.mp4'; ?>" type="video/mp4">
@@ -10,9 +10,9 @@
 </section>
 
 <!-- Our Projcts Section -->
-<section id="ourProjects" class="">
-  <div class="container mx-auto">
-    <div class="mx-10">
+<section id="ourProjects" class="no-cursor">
+  <div class="container mx-auto ">
+    <div class="mx-10 ">
       <?php if( have_rows('overview_content') ): ?>
         <?php while( have_rows('overview_content') ): the_row(); 
 
@@ -23,7 +23,7 @@
 
             <div class="grid lg:grid-cols-6 gap-4 mt-16 lg:mt-36">
               <!-- Left side -->
-              <div class="lg:col-span-2">
+              <div class="lg:col-span-2 no-cursor">
                 <?php 
                   $overviewContent = get_field('overview_content'); 
                   $overviewLeftSide = $overviewContent['overview_left_side'];
@@ -34,7 +34,7 @@
                 <h3 class="thentwrkTheme_title text-center lg:text-left font-prompt text-white mt-2"><?php echo $overviewLeftSideTitle; ?></h3>
               </div>
               <!-- Right side -->
-              <div class="lg:col-span-4 lg:ml-24">
+              <div class="lg:col-span-4 lg:ml-24 no-cursor">
                 <?php 
                     $overviewRightSide = $overviewContent['overview_right_side'];
                     $overviewRightSideDescription = $overviewRightSide['overveiw_right_side_description'];
@@ -47,7 +47,7 @@
         <?php endwhile; ?>
       <?php endif; ?>
     </div>
-    <div class="ourProjects_carousel my-14 lg:my-24">
+    <div id="specificDiv" class="ourProjects_carousel my-14 lg:my-24">
       <?php
         // The Query
         $args = array(
@@ -66,7 +66,7 @@
         if ($projectQuery->have_posts()) :
             while ($projectQuery->have_posts()) : $projectQuery->the_post(); ?>
                 
-          <a href="<?php the_permalink(); ?>">
+          <a class="hover" href="<?php the_permalink(); ?>">
             <div class="projectsCard_wrapper relative">
                 <?php the_post_thumbnail('project-carousel') ?>
               <h3 class="projectCard_title font-prompt text-white absolute bottom-1 left-3 z-20"><?php the_title(); ?></h3>
@@ -81,6 +81,8 @@
         endif; ?>
 
         </div>
+        <!-- Cursor blob element -->
+        <div class="cursor-blob"></div>
         <?php 
         // Restore original post data
         wp_reset_postdata();
@@ -90,7 +92,7 @@
 </section>
 
 <!-- Services Section -->
-<section id="services" class="my-10">
+<section id="services" class="my-10 no-cursor">
   <div class="container mx-auto">
     <div class="servicesHeading mx-10 mb-14">
       <span class="homepageOverview_ourProjects__span text-green font-jost">Services</span>
@@ -116,7 +118,7 @@
   <?php 
     $bottomSlider = get_sub_field('services_section_bottom_slider');
     if( $bottomSlider ): ?>
-        <div class="my-carousel mt-10">
+        <div class="my-carousel mt-14">
           <?php foreach( $bottomSlider as $bottomSliderImage ): ?>
             <div class="my-slide">
               <?php echo wp_get_attachment_image( $bottomSliderImage, $size ); ?>
@@ -141,7 +143,7 @@
 </section>
 
 <!-- Connect and Join Section -->
-<section id="connectAndJoin" class="mt-20 lg:mt-36 mb-24">
+<section id="connectAndJoin" class="mt-20 lg:mt-36 mb-24 no-cursor">
   <div class="container mx-auto">
     <div class="mx-10">
       <div class="grid lg:grid-cols-2 gap-8">

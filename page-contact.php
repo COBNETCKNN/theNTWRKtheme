@@ -23,7 +23,7 @@
                     $contactPageFormShortcode = get_sub_field('contact_page_contact_form_shortcode'); ?>
 
                     <!-- Thumbnail -->
-                    <div class="hidden lg:block contactPage_thumbnail__wrapper">
+                    <div class="hidden lg:block contactPage_thumbnail__wrapper mt-0 md:mt-5 xl:mt-0">
                         <?php 
                             $size = 'full'; // (thumbnail, medium, large, full or custom size)
                             if( $contactPageImage ) {
@@ -40,8 +40,8 @@
                         $contactPageShortcode = get_sub_field('contact_page_contact_form_shortcode');
                         ?>
 
-                        <p class="text-center lg:text-left text-white font-jost thentwrkTheme_paragraph lg:w-2/3"><?php echo $contactPageFormText; ?></p>
-                        <div class="contactPage_contactForm text-white font-jost mt-10 lg:mt-0 lg:my-5">
+                        <p class="text-center lg:text-left text-white font-jost thentwrkTheme_paragraph mb-0 xl:mb-5 xl:w-2/3"><?php echo $contactPageFormText; ?></p>
+                        <div class="contactPage_contactForm text-white font-jost mt-10 xl:mt-0 lg:my-5">
                             <?php echo do_shortcode($contactPageShortcode); ?>
                         </div>
                         <?php endwhile; ?>

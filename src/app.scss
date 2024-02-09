@@ -9,6 +9,7 @@
 
 // Importing custom responsive sizes
 @import 'mobile';
+@import 'tablet';
 
 body {
     background-color: #1B1B1B;
@@ -23,8 +24,11 @@ body {
         font-style: normal;
         font-weight: 400;
         line-height: 24px; /* 133.333% */
-        border-bottom: 1px solid #96EB42;
     }
+}
+
+.current-menu-item {
+  border-bottom: 1px solid #96EB42;
 }
 
 footer {
@@ -53,7 +57,7 @@ video {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: -12%;
+    top: -14%;
     left: 0;
     z-index: 0;
     box-shadow: -1px 14px 59px 3px rgba(0,0,0,0.85);
@@ -224,13 +228,6 @@ video {
     font-style: normal;
     font-weight: 300;
     line-height: 32px; /* 133.333% */
-}
-
-.services_gallery {
-    img {
-        height: 58px;
-        width: 100%;
-    }
 }
 
 .project_categories__wrapper {
@@ -427,4 +424,36 @@ a.cat-list_item.active {
 .projectsCard_wrapper:hover, .projectsCard_wrapper:focus, .projectsCard_wrapper:active {
   -webkit-transform: scale(0.97);
   transform: scale(0.97);
+}
+
+.cursor-blob.blob-active {
+  cursor: none;
+  transform: scale(2); /* Increase blob size when active */
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  pointer-events: none; /* Make sure the blob doesn't interfere with other elements */
+  z-index: 9999; /* Ensure the blob stays on top */
+  transition: transform 0.6s ease-out; /* Smooth transition for blob movement */
+  transform: translate(-50%, -50%) scale(2); /* Translate to center and scale */
+  transform-origin: center; 
+}
+
+.cursor-blob.blob-active::after {
+  content: 'Explore';
+  font-size: 9px;
+  font-weight: 400;
+  position: absolute;
+  top: 13px;
+  left: 5px;
+}
+
+.my-slide {
+  img {
+    width: auto !important;
+    height: 75px !important; /* Ensures that the image's height adjusts proportionally */
+    object-fit: cover !important;
+  }
 }

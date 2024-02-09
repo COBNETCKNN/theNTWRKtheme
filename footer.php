@@ -1,18 +1,15 @@
-<?php wp_footer(); ?>
-
 <?php
 
-$page_id = 21;
-$args = array(
+$args = array( 
     'post_type' => 'page',
-    'post__in' => array($page_id),
+    'page_id' => 21
 );
 
-$query = new WP_Query($args);
-if ($query->have_posts()) {
+$footerQuery = new WP_Query($args);
+if ($footerQuery->have_posts()) {
     // Loop through the posts (in this case, just one)
-    while ($query->have_posts()) {
-        $query->the_post();
+    while ($footerQuery->have_posts()) {
+        $footerQuery->the_post();
 ?>
 
 <footer class="">
@@ -93,12 +90,14 @@ if ($query->have_posts()) {
 
 <?php
         }
-    wp_reset_postdata();
+
     } else {
         // No posts found
         echo '<p>Page not found.</p>';
     }
+    wp_reset_postdata();
 ?>
 
+<?php wp_footer(); ?>
 </body>
 </html>

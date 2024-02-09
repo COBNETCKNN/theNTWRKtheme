@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-cursor">
 <head>
     <meta charset="<?php bloginfo('charset');?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,7 @@
 <?php wp_body_open(); ?>
 
 <!-- Tablet & Desktop Header -->
-<header class="hidden lg:block relative">
+<header class="hidden lg:block relative no-cursor">
     <div class="headerGrid grid grid-cols-6 container mx-auto py-6">
         <!-- Logo -->
         <div class="col-span-1 ml-10">
