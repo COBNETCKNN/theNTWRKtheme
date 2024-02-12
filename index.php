@@ -8,7 +8,7 @@
         </video>
     </div>
     <!-- Line Art -->
-    <div class="ourProjects_lineArt"></div>
+    <div class="ourProjects_lineArt lineArt"></div>
 </section>
 
 <!-- Our Projcts Section -->
@@ -148,7 +148,7 @@
 <section id="connectAndJoin" class="mt-20 lg:mt-36 mb-24 no-cursor">
   <div class="container mx-auto relative">
     <!-- Line Art -->
-    <div class="services_lineArt"></div>
+    <div class="services_lineArt lineArt"></div>
     <div class="mx-10">
       <div class="grid lg:grid-cols-2 gap-8">
         <!-- Left side -->

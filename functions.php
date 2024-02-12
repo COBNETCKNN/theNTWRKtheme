@@ -2,15 +2,15 @@
 // Enquesing custom CSS&JS files
 function thentwrktheme_files() {
     //enqueue CSS
-    wp_enqueue_style('mainCSS', get_template_directory_uri() . '/css/main.css', array(), '1.3');
-    wp_enqueue_style('owlCarousel', get_template_directory_uri() . '/assets/owlCarousel/owl.carousel.min.css', array(), '1.3');
+    wp_enqueue_style('mainCSS', get_template_directory_uri() . '/css/main.css', array(), '1.5');
+    wp_enqueue_style('owlCarousel', get_template_directory_uri() . '/assets/owlCarousel/owl.carousel.min.css', array(), '1.5');
     wp_enqueue_style('scrollCarousel', 'https://cdn.jsdelivr.net/npm/scroll-carousel@1.2.7/dist/scroll.carousel.min.css');
     wp_enqueue_style('fontAwesomeCSS', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 
     //enqueue JS
     wp_enqueue_script('jquery');
-    wp_enqueue_script('mainJS', get_stylesheet_directory_uri() . '/js/main.js', array(), 1.3, true);
-    wp_enqueue_script('owlCarouselJS', get_stylesheet_directory_uri(). '/assets/owlCarousel/owl.carousel.min.js', array(), 1.3, true);
+    wp_enqueue_script('mainJS', get_stylesheet_directory_uri() . '/js/main.js', array(), 1.5, true);
+    wp_enqueue_script('owlCarouselJS', get_stylesheet_directory_uri(). '/assets/owlCarousel/owl.carousel.min.js', array(), 1.5, true);
     wp_enqueue_script('scrollCarouselJS', 'https://cdn.jsdelivr.net/npm/scroll-carousel@1.2.7/dist/scroll.carousel.min.js');
     wp_enqueue_script('fontAwesome', 'https://kit.fontawesome.com/24bc428ad4.js');
 }
@@ -25,6 +25,7 @@ add_image_size('social-media-icons', 25, 25, true);
 add_image_size('project-carousel', 225, 200, true);
 add_image_size('project-post', 850, 250, true);
 add_image_size('services-carousel', 650, 65, false);
+add_image_size('project-images', 420, 630, true);
 
 // Registrating Custom Post Types
 require_once('partials/post-types.php');

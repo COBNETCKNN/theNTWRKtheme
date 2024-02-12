@@ -29,12 +29,29 @@
     }
 ?>
 
+<section id="singleImages" class="mb-14">
+    <div class="container mx-auto">
+        <div class="mx-10">
+            <!-- Project Heading -->
+            <h1 class="singleCredentials_title connectAndJoinSection_cardTitle font-prompt text-white pb-10"><?php the_title(); ?></h1>
+            <div class="singleProject_grid grid grid-cols-3 gap-4 mx-auto">
+                <?php 
+                $singleImages = get_field('project_single_images');
+                $size = 'project-images'; // (thumbnail, medium, large, full or custom size)
+                if( $singleImages ): ?>
+                        <?php foreach( $singleImages as $singleImage_id ): ?>
+                                <?php echo wp_get_attachment_image( $singleImage_id, $size ); ?>
+                        <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Credentials Section -->
 <section id="singleCredentials" class="my-5 lg:my-0 lg:mb-16">
     <div class="container mx-auto relative">
         <div class="mx-10">
-            <!-- Project Heading -->
-            <h1 class="singleCredentials_title connectAndJoinSection_cardTitle font-prompt text-white pb-7"><?php the_title(); ?></h1>
             <!-- ACF repeater field for credentials -->
             <?php
             if( have_rows('project_single_credentials') ):
@@ -62,7 +79,7 @@
             endif;
             ?>
             <!-- Line Art -->
-            <div class="page_lineArt__single"></div>
+            <div class="page_lineArt__single lineArt"></div>
             <div class="projectsPosts_single_loadMore py-16 flex justify-center">
                 <a class="projectsPostsSingle_loadMore__button projectsPosts_loadMore__button text-white font-jost thentwrkTheme_paragraph flex justify-center items-center h-[50px]" type="button" href=""><span class="projectPosts_loadMore__plus mb-2 mx-2">+</span>Load More</a>
             </div>

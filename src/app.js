@@ -2,7 +2,6 @@ jQuery(document).ready(function(jQuery){
       
         var owl = jQuery('.owl-carousel');
         owl.owlCarousel({
-            loop:true,
             nav:true,
             margin:20,
             responsive:{
@@ -22,14 +21,6 @@ jQuery(document).ready(function(jQuery){
                     items: 5
                 }
             }
-        });
-        owl.on('mousewheel', '.owl-stage', function (e) {
-            if (e.deltaY>0) {
-                owl.trigger('next.owl');
-            } else {
-                owl.trigger('prev.owl');
-            }
-            e.preventDefault();
         });
 
         // Single project Load more button

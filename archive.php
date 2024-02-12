@@ -4,7 +4,7 @@
 <section id="aboutUs_heading">
     <div class="container mx-auto relative">
         <!-- Line Art -->
-        <div class="page_lineArt lineArt"></div>
+        <div class="page_lineArt"></div>
         <div class="mx-10">
             <div class="aboutUs_heading__wrapper pt-24 pb-1">
                 <h1 class="thentwrktheme_page__heading text-center lg:text-left text-white font-prompt lg:ml-14">Work</h1>
@@ -46,7 +46,8 @@
 
 <!-- Project Posts Section -->
 <section id="projectPosts" class="my-10">
-    <div class="container mx-auto relative">
+    asd
+    <div class="container mx-auto">
         <div class="mx-10">
         <div class="grid-wrapper">
             <?php
@@ -56,7 +57,7 @@
                 $category = get_queried_object(); // Get the current category object
 
                 $args = array(
-                    'post_type'      => 'project', // Change to your custom post type if needed
+                    'post_type'      => 'post', // Change to your custom post type if needed
                     'posts_per_page' => -1, // Display all posts in the category
                     'category_name'  => $category->slug, // Use category slug for query
                 );
@@ -83,29 +84,7 @@
                 ?>
             </div>
         </div>
-        <!-- Line Art -->
-        <div class="page_lineArt__bottom lineArt"></div>
     </div>
 </section>
-
-<?php
-// Adding current-menu-item class on Work element in the header
-function add_custom_script_to_footer() {
-    if (is_category()) { // Check if we are on the category.php template
-        ?>
-        <script>
-            jQuery(document).ready(function($) {
-                // Find the menu item with the class .menu-item in the header
-                var menuItem = $('.menu-item-19');
-
-                // Add .current-menu-item class to the menu item
-                menuItem.addClass('current-menu-item');
-            });
-        </script>
-        <?php
-    }
-}
-add_action('wp_footer', 'add_custom_script_to_footer');
-?>
 
 <?php get_footer() ?>

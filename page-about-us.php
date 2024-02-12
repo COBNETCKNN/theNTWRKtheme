@@ -4,7 +4,7 @@
 <section id="aboutUs_heading" class="relative">
     <div class="container mx-auto relative">
         <!-- Line Art -->
-        <div class="page_lineArt"></div>
+        <div class="page_lineArt lineArt"></div>
         <div class="mx-10">
             <div class="aboutUs_heading__wrapper pt-24 pb-1">
                 <h1 class="text-center lg:text-left thentwrktheme_page__heading text-white font-prompt lg:ml-14">About</h1>

@@ -31,6 +31,10 @@ html, body {
         font-weight: 400;
         line-height: 24px; /* 133.333% */
     }
+
+    li:hover {
+      border-bottom: 1px solid #96EB42;
+    }
 }
 
 .current-menu-item {
@@ -398,7 +402,7 @@ a.cat-list_item.active {
   background-size: cover;
 }
 
-.singleCredentials_title, .singleCredentials_wrapper {
+.singleCredentials_wrapper {
   border-bottom: 0.5px solid rgba(150, 235, 66, 0.50);
 }
 
@@ -433,27 +437,28 @@ a.cat-list_item.active {
 }
 
 .cursor-blob.blob-active {
-  cursor: none;
+  cursor: none; /* Disable cursor when active */
+  pointer-events: none; /* Disable pointer events when active */
   transform: scale(2); /* Increase blob size when active */
   position: absolute;
   width: 40px;
   height: 40px;
-  background-color: #fff;
+  background-color: #96EB42;
   border-radius: 50%;
-  pointer-events: none; /* Make sure the blob doesn't interfere with other elements */
-  z-index: 9999; /* Ensure the blob stays on top */
+  z-index: 1; /* Ensure the blob stays on top */
   transition: transform 0.6s ease-out; /* Smooth transition for blob movement */
   transform: translate(-50%, -50%) scale(2); /* Translate to center and scale */
   transform-origin: center; 
 }
 
 .cursor-blob.blob-active::after {
-  content: 'Explore';
-  font-size: 9px;
+  content: '< >';
+  font-size: 14px;
   font-weight: 400;
   position: absolute;
-  top: 13px;
-  left: 5px;
+  top: 21%;
+  left: 21%;
+  transform: scaleY(2); /* Adjust the scale factor as needed */
 }
 
 .my-slide {
@@ -469,7 +474,50 @@ a.cat-list_item.active {
   z-index: 10;
 }
 
-@media (min-width: 1023px){
+.owl-nav {
+  width: 40px;
+  height: 40px;
+  opacity: 0.7;
+  background-color: #96EB42;
+  display: inline-block;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 2%;
+  bottom: 25%;
+}
+
+.owl-prev {
+  margin-bottom: 10px;
+
+  span {
+    font-size: 40px;
+    font-weight: 400;
+    color: black;
+  }
+}
+
+.owl-next {
+  margin-bottom: 10px;
+
+  span {
+    font-size: 40px;
+    font-weight: 400;
+    color: black;
+  }
+}
+
+.singleProject_grid {
+  img {
+    border-radius: 15px;
+  }
+}
+
+
+
+@media (min-width: 1440px){
   .ourProjects_lineArt {
     width: 100rem;
     height: 70rem;
@@ -500,7 +548,7 @@ a.cat-list_item.active {
     position: absolute;
     top: -220%;
     right: 16%;
-    z-index: 0;
+    z-index: -1;
     background-image: url('../assets/LineArt/Group74.png');
     background-size: contain;
     background-repeat: no-repeat; 
