@@ -3,22 +3,30 @@ jQuery(document).ready(function(jQuery){
         var owl = jQuery('.owl-carousel');
         owl.owlCarousel({
             nav:true,
-            margin:20,
             responsive:{
                 0:{
-                    items:2
+                    items:2,
+                    margin:50,
+                },
+                400:{
+                    items:2,
+                    margin:40,
                 },
                 600:{
-                    items:3
+                    items:3,
+                    margin:40,
                 },            
                 960:{
-                    items:3
+                    items:3,
+                    margin:20,
                 },
                 1200:{
-                    items:4
+                    items:4,
+                    margin:20,
                 },
                 1440: {
-                    items: 5
+                    items: 5,
+                    margin:20,
                 }
             }
         });
@@ -70,22 +78,23 @@ new ScrollCarousel(".my-carousel-reverse", {
 jQuery(document).ready(function() {
     // Cache jQuery objects for performance
     var cursorBlob = jQuery(".cursor-blob");
-
-    // Track mouse movement to update blob position
-    jQuery(document).mousemove(function(event) {
-        cursorBlob.css({
-            left: event.pageX + "px",
-            top: event.pageY + "px"
+    if (jQuery(window).width() > 1024) {
+        // Track mouse movement to update blob position
+        jQuery(document).mousemove(function(event) {
+            cursorBlob.css({
+                left: event.pageX + "px",
+                top: event.pageY + "px"
+            });
         });
-    });
 
-    // Add blob effect when specific div is hovered
-    jQuery("#specificDiv").hover(
-        function() {
-            cursorBlob.addClass("blob-active");
-        },
-        function() {
-            cursorBlob.removeClass("blob-active");
-        }
-    );
+        // Add blob effect when specific div is hovered
+        jQuery("#specificDiv").hover(
+            function() {
+                cursorBlob.addClass("blob-active");
+            },
+            function() {
+                cursorBlob.removeClass("blob-active");
+            }
+        );
+    }
 });

@@ -152,19 +152,33 @@
     }
 
     .thentwrkTheme_title {
-        line-height: 48px !important;
+        line-height: 44px !important;
         font-size: 28px !important;
-    }
-    
-    .owl-nav {
-        display: none;
     }
 
     .homepage_overview__title {
         font-size: 30px !important;
+        line-height: 46px !important;
     }
 
     .sc-slide {
         margin-right: 70px !important;
+    }
+
+    .cursor-blob {
+        display: none !important;
+    }
+
+    .homepage_lineArt__top {
+        display: none;
+      }
+      
+    .homepage_lineArt__bottom {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .owl-item {
     }
 }

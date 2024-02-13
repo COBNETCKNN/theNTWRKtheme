@@ -8,7 +8,7 @@
         </video>
     </div>
     <!-- Line Art -->
-    <div class="ourProjects_lineArt lineArt"></div>
+    <img class="homepage_lineArt__top" src="<?php echo get_template_directory_uri() . './assets/LineArt/Group73.png' ?>" alt="Line Art Group 74">
 </section>
 
 <!-- Our Projcts Section -->
@@ -148,7 +148,7 @@
 <section id="connectAndJoin" class="mt-20 lg:mt-36 mb-24 no-cursor">
   <div class="container mx-auto relative">
     <!-- Line Art -->
-    <div class="services_lineArt lineArt"></div>
+    <img class="homepage_lineArt__bottom" src="<?php echo get_template_directory_uri() . './assets/LineArt/Group74.png' ?>" alt="Line Art Group 74">
     <div class="mx-10">
       <div class="grid lg:grid-cols-2 gap-8">
         <!-- Left side -->

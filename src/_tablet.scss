@@ -15,13 +15,18 @@
         grid-auto-flow: dense;
     }
 
-    .lineArt {
-        display: none;
+    .homepage_lineArt__bottom {
+        width: 90%;
+        height: 250%;
+        position: absolute;
+        top: -140%;
+        right: -55%;
     }
+
 
 }
 
-@media (min-width: 1024px) and (max-width: 1600px) {
+@media (min-width: 1024px) and (max-width: 1448px) {
     .gridAboutUs {
         display: grid;
         grid-gap: 25px;
