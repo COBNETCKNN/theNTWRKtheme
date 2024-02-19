@@ -22,9 +22,13 @@
         top: -140%;
         right: -55%;
     }
-
-
 }
+
+@media (min-width: 850px) and (max-width: 1025px){
+    #singleHero {
+        height: 45vh;
+    }
+} 
 
 @media (min-width: 1024px) and (max-width: 1448px) {
     .gridAboutUs {

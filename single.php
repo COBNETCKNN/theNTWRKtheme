@@ -1,25 +1,24 @@
 <?php get_header(); ?>
 
+<!-- Hero Section -->
 <?php 
 
-    $videoUrl = get_field('project_single_hero_video');
+    $videoUrl = get_field('project_single_vimeo_video_id');
 
     if($videoUrl){ ?>
 
-    <section id="singleProject_hero" class="no-cursor">
-        <div class="hero_video__overlay relative h-[82vh]">
-            <video autoplay muted loop id="myVideo">
-            <source src="<?php echo $videoUrl; ?>" type="video/mp4">
-            </video>
+    <section id="singleHero" class="relative xl:h-screen w-full 2xl:mb-28">
+        <div class='embed-container'>
+            <iframe src='https://player.vimeo.com/video/<?php echo $videoUrl; ?>?&autoplay=1&loop=1&controls=0&muted=1' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
         </div>
     </section>
 
 <?php } elseif (empty($videoUrl)) {?>
 
     <!-- Hero Section -->
-    <section id="singleHero" class="h-[82vh] w-full">
+    <section id="singleHeroThumbnail" class="h-screen w-full">
         <?php $thumb = get_the_post_thumbnail_url();  ?>
-        <div class="hero_wrapper absolute top-0 right-0 h-[85vh] w-full -mt-10 lg:-mt-0" style="background-image: url('<?php echo $thumb;?>')">
+        <div class="hero_wrapper absolute top-0 right-0 h-screen w-full -mt-10 lg:-mt-0" style="background-image: url('<?php echo $thumb;?>')">
         </div>
     </section>
 
@@ -114,7 +113,7 @@
                 <a href="<?php the_permalink(); ?>">
                     <div class="projectsCard_wrapper relative">
                         <?php the_post_thumbnail('project-carousel') ?>
-                        <h3 class="projectCard_title font-prompt text-white absolute bottom-1 left-3 z-20"><?php the_title(); ?></h3>
+                        <h3 class="projectCard_title__carousel projectCard_title font-prompt text-white absolute bottom-1 left-3 z-20"><?php the_title(); ?></h3>
                     </div>
                 </a>
             <?php 

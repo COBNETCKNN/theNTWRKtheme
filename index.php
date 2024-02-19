@@ -3,12 +3,12 @@
 <!-- Hero Section -->
 <section id="hero">
     <div class="hero_video__overlay relative h-[82vh]">
-        <video autoplay muted loop id="myVideo">
+        <video autoplay playsinline muted loop id="myVideo">
         <source src="<?php echo get_template_directory_uri() . '/assets/videos/thentwrkvideo.mp4'; ?>" type="video/mp4">
         </video>
     </div>
     <!-- Line Art -->
-    <img class="homepage_lineArt__top" src="<?php echo get_template_directory_uri() . './assets/LineArt/Group73.png' ?>" alt="Line Art Group 74">
+    <img class="homepage_lineArt__top" src="<?php echo get_template_directory_uri() . '/assets/LineArt/Group73.png' ?>" alt="Line Art Group 74">
 </section>
 
 <!-- Our Projcts Section -->
@@ -71,7 +71,7 @@
           <a class="hover" href="<?php the_permalink(); ?>">
             <div class="projectsCard_wrapper relative">
                 <?php the_post_thumbnail('project-carousel') ?>
-              <h3 class="projectCard_title font-prompt text-white absolute bottom-1 left-3 z-20"><?php the_title(); ?></h3>
+              <h3 class="projectCard_title__carousel projectCard_title font-prompt text-white absolute bottom-1 left-3 z-20"><?php the_title(); ?></h3>
             </div>
           </a>
 
@@ -148,7 +148,7 @@
 <section id="connectAndJoin" class="mt-20 lg:mt-36 mb-24 no-cursor">
   <div class="container mx-auto relative">
     <!-- Line Art -->
-    <img class="homepage_lineArt__bottom" src="<?php echo get_template_directory_uri() . './assets/LineArt/Group74.png' ?>" alt="Line Art Group 74">
+    <img class="homepage_lineArt__bottom" src="<?php echo get_template_directory_uri() . '/assets/LineArt/Group74.png' ?>" alt="Line Art Group 74">
     <div class="mx-10">
       <div class="grid lg:grid-cols-2 gap-8">
         <!-- Left side -->

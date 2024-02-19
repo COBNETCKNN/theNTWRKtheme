@@ -17,8 +17,8 @@
 <section id="projectCategories">
     <div class="container mx-auto">
         <div class="mx-10">
-            <div class="projectCategories_wrapper flex justify-between lg:justify-start items-center my-10">
-                <a class="cat-list_item active text-white text-white mx-1 lg:mx-3 py-1.5 px-3 lg:px-5 bg-zinc-500 uppercase font-jost" href="<?php echo get_post_type_archive_link('project');?>">All</a>
+            <div class="projectCategories_wrapper flex justify-start lg:justify-start items-center my-10">
+                <a class="cat-list_item active text-white text-white mx-1 my-5 lg:mx-3 py-1.5 px-2 lg:px-5 bg-zinc-500 uppercase font-jost" href="<?php echo get_post_type_archive_link('project');?>">All</a>
                 <?php 
                     $cat_args = get_terms(array(
                         'taxonomy' => 'category',
@@ -29,7 +29,7 @@
 
                     foreach($categories as $term) : ?>
                         <li class="project_categories__wrapper w-fit">
-                        <a class="cat-list_item text-white mx-1 lg:mx-3 py-1.5 px-3 lg:px-5 bg-zinc-500 uppercase font-jost" href="<?php echo site_url('/category/' . $term->slug)?>">
+                        <a class="cat-list_item text-white mx-1 lg:mx-3 py-1.5 px-2 lg:px-5 bg-zinc-500 uppercase font-jost" href="<?php echo site_url('/category/' . $term->slug)?>">
                             <?= $term->name; ?>
                         </a>
                         </li>

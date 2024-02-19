@@ -42,7 +42,7 @@ if ($footerQuery->have_posts()) {
                             <h3 class="text-white font-prompt font-normal text-2xl mt-12 mb-4"><?php echo $heading; ?></h3>
                             <h4 class="text-white font-prompt font-normal text-lg"><?php echo $subheading; ?></h4>
 
-                            <a class="getInTouch_button py-2 px-5 bg-green text-brown font-jost font-normal text-lg rounded-lg mt-6" type="button" href="<?php echo site_url('/contact')?>" target="_blank">Get in touch &#8594;</a>
+                            <a class="footer_getInTouch_button getInTouch_button py-2 px-5 bg-green text-brown font-jost font-normal text-lg rounded-lg" type="button" href="<?php echo site_url('/contact')?>" target="_blank">Get in touch &#8594;</a>
                             
                         <?php endwhile; ?>
                     <?php endif; ?>
